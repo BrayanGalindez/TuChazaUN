@@ -37,7 +37,7 @@ const New = () => {
         axios.post(url + 'save', article).then(res => {
             setRedirect(true);
             console.log(res.data);
-        })
+        });
     }
     if(redirect){
         return <Navigate to="articles" />;
