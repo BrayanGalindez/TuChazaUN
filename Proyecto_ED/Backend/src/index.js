@@ -3,9 +3,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-
+//Initilizations
 const app = express();
 
+//Settings
 const port = 3900;
 
 var url = 'mongodb://localhost:27017/api_rest_reactnotas';
