@@ -14,11 +14,22 @@ var url = 'mongodb://localhost:27017/api_rest_reactnotas';
 mongoose.Promise = global.Promise;
 
 var article_routes = require('./routes/article');
+
+var chaza_routes = require('./routes/chaza');
+
 //Cargamos body-parser, es un middleware para analizar cuerpos a traves de la URL
 app.use(bodyParser.urlencoded({extended: false}));
 
 //Cualquier petición la convertimos a json:
 app.use(bodyParser.json());
+
+
+
+
+
+
+
+
 
 //Activamos el CORS para permitir las peticiones AJAX Y HTTP desde el frontend:
 app.use((req, res, next) => {
@@ -29,6 +40,7 @@ app.use((req, res, next) => {
     next();
 })
 app.use('/api', article_routes)
+app.use('/api', chaza_routes)
 
 mongoose.connect(url,{useNewUrlParser: true}).then(() =>{
     console.log('Conexion a la bdd realizada con exito!!!');
