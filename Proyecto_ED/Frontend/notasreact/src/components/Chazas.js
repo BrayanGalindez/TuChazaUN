@@ -41,13 +41,13 @@ const Chazas = () => {
                     {
                         chazas.length > 0 ? (
 
-                            chazas.map((Chazas, i) => {
+                            chazas.map((chaza, i) => {
 
                                 return (
                                     <Chazas
                                         key={i}
                                         id={i}
-                                        ChazasData={Chazas}
+                                        chazaData={chaza}
                                         delChazas={deleteChazas}
 
                                     />

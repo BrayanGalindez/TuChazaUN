@@ -9,7 +9,6 @@ const Newchaza = () => {
     const [article, setArticle] = useState({
         title: null,
         content: null,
-        author: null,
     });
 
     const [redirect, setRedirect] = useState(false);
@@ -17,14 +16,11 @@ const Newchaza = () => {
     //Referencia de los datos del formulario:
     let titleRef = React.createRef();
     let contentRef = React.createRef();
-    let authorRef = React.createRef();
 
     const changeState = () => {
         setArticle({
             title: titleRef.current.value,
             content: contentRef.current.value,
-            author: authorRef.current.value
-            
         });
 
         console.log(article);
@@ -34,7 +30,7 @@ const Newchaza = () => {
         e.preventDefault();
         changeState();
         //Peticion HTTP por POST para guardar el articulo
-        axios.post(url + 'save', article).then(res => {
+        axios.post(url + 'saveChaza', article).then(res => {
             setRedirect(true);
             console.log(res.data);
         });
