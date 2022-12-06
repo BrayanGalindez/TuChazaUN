@@ -2,7 +2,8 @@ import React from 'react';
 
 const Chaza = ({ id, chazaData, delChaza }) => {
 
-    const { title,content } = chazaData;
+    const { title,content} = chazaData;
+
     const del = () => {
         delChaza(id);
 

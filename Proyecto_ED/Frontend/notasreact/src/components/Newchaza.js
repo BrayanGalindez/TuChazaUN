@@ -5,8 +5,7 @@ import Global from '../Global';
 
 const Newchaza = () => {
     const url = Global.url;
-
-    const [article, setArticle] = useState({
+    const [chaza, setChaza] = useState({
         title: null,
         content: null,
     });
@@ -18,25 +17,25 @@ const Newchaza = () => {
     let contentRef = React.createRef();
 
     const changeState = () => {
-        setArticle({
+        setChaza({
             title: titleRef.current.value,
-            content: contentRef.current.value,
+            content: contentRef.current.value
         });
 
-        console.log(article);
+        console.log(chaza);
     }
     const sendData = (e) => {
         //Evitamos que al recibir los datos se recargue la pantalla
         e.preventDefault();
         changeState();
         //Peticion HTTP por POST para guardar el articulo
-        axios.post(url + 'saveChaza', article).then(res => {
+        axios.post(url + 'saveChaza', chaza).then(res => {
             setRedirect(true);
             console.log(res.data);
         });
     }
     if(redirect){
-        return <Navigate to="/chazas" />;
+        return <Navigate to="chazas" />;
     }
 
 

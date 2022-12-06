@@ -1,33 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Global from '../Global';
 import Chaza from './Chaza';
-
+import Global from '../Global';
 const Chazas = () => {
-
-    const [chazas, setChazas] = useState([]);
     const url = Global.url;
+    const [chazas, setChaza] = useState([]);
 
     useEffect(() => {
-        getChazas();
+        getChaza();
         console.log(chazas);
     }, [chazas.length]);
 
 
-    //Obtenemos los artículos
+    //Obtenemos las chazas
 
-    const getChazas = () => {
-        axios.get(url + "chazas").then(res => {
-            setChazas(res.data.chazas);
+    const getChaza = () => {
+        axios.get(url +"getChaza").then(res => {
+            setChaza(res.data.chazas);
         });
     }
 
     //Eliminamos un artículo por su id
 
-    const deleteChazas = (id) => {
-        const idChazas = chazas[id]._id;
-        axios.delete(url + "deleteChaza/" + idChazas).then(res => {
-            getChazas();
+    const deleteChaza = (id) => {
+        const idChaza = chazas[id]._id;
+        axios.delete(url +"deleteChaza/" + idChaza).then(res => {
+            getChaza();
         });
     }
 
@@ -48,7 +46,7 @@ const Chazas = () => {
                                         key={i}
                                         id={i}
                                         chazaData={chaza}
-                                        delChaza={deleteChazas}
+                                        delChaza={deleteChaza}
 
                                     />
                                 );
@@ -56,7 +54,7 @@ const Chazas = () => {
 
                         ) : (
 
-                            <h3 className="mx-auto">No hay chazas en este momento</h3>
+                            <h3 className="mx-auto">No hay artículos que mostrar</h3>
 
                         )}
                 </div>

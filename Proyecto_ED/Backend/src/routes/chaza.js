@@ -10,7 +10,7 @@ var router = express.Router();
 
 router.post('/saveChaza',Article.saveChaza);
 
-router.get('/chazas',Article.getChaza);
+router.get('/getChaza',Article.getChaza);
 
 router.delete('/deleteChaza/:id',Article.deleteChaza);
 
