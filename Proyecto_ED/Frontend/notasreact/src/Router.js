@@ -12,9 +12,9 @@ const Router = () => {
         <BrowserRouter>
             <Header />
             <Routes>
-                <Route exact path='/' element={<New />} />
-                <Route exact path='articles' element={<Articles />} />
-                <Route exact path='c' element={<Newchaza />} />
+                <Route exact path='crearArticles' element={<New />} />
+                <Route exact path='/crearArticles/articles' element={<Articles />} />
+                <Route exact path='/' element={<Newchaza />} />
                 <Route exact path='chazas' element={<Chazas />} />
             </Routes>
         </BrowserRouter>

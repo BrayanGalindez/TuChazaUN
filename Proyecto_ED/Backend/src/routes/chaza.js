@@ -1,18 +1,17 @@
 'use strict';
 
 var express = require('express');
-var Article = require('../controllers/chaza');
-
+var Chaza = require('../controllers/chaza');
 //Llamamos al objeto router de express
 var router = express.Router();
 
 //Rutas para las chazas:
 
-router.post('/saveChaza',Article.saveChaza);
+router.post('/saveChaza',Chaza.saveChaza);
 
-router.get('/getChaza',Article.getChaza);
+router.get('/getChaza',Chaza.getChaza);
 
-router.delete('/deleteChaza/:id',Article.deleteChaza);
+router.delete('/deleteChaza/:id',Chaza.deleteChaza);
 
 module.exports = router;
 

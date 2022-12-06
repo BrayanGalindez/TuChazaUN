@@ -2,19 +2,20 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Chaza from './Chaza';
 import Global from '../Global';
-const Chazas = () => {
-    const url = Global.url;
-    const [chazas, setChaza] = useState([]);
 
+const Chazas = () => {
+    const [chazas, setChaza] = useState([]);
+    const url = Global.url;
+    
     useEffect(() => {
-        getChaza();
+        getChazas();
         console.log(chazas);
     }, [chazas.length]);
 
 
     //Obtenemos las chazas
 
-    const getChaza = () => {
+    const getChazas = () => {
         axios.get(url +"getChaza").then(res => {
             setChaza(res.data.chazas);
         });
@@ -22,10 +23,10 @@ const Chazas = () => {
 
     //Eliminamos un artículo por su id
 
-    const deleteChaza = (id) => {
+    const deleteChazas = (id) => {
         const idChaza = chazas[id]._id;
         axios.delete(url +"deleteChaza/" + idChaza).then(res => {
-            getChaza();
+            getChazas();
         });
     }
 
@@ -46,7 +47,7 @@ const Chazas = () => {
                                         key={i}
                                         id={i}
                                         chazaData={chaza}
-                                        delChaza={deleteChaza}
+                                        delChaza={deleteChazas}
 
                                     />
                                 );

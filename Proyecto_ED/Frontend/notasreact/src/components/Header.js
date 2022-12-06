@@ -6,7 +6,7 @@ const Header = () => {
     return (
         <nav id="navbar" className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container">
-                <NavLink to="/" className="navbar-brand" ><img class="App-logo" src={logo} alt="logo" width="80" /></NavLink>
+                <NavLink to="crearArticles" className="navbar-brand" ><img class="App-logo" src={logo} alt="logo" width="80" /></NavLink>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			      <span className="navbar-toggler-icon"></span>
 			    </button>
@@ -20,7 +20,7 @@ const Header = () => {
             </div>
 
             <div className= "container">
-            <NavLink to="c" className="navbar-brand" ><img class="App-logo" src={logo} alt="logo" width="80" /></NavLink>
+            <NavLink to="/" className="navbar-brand" ><img class="App-logo" src={logo} alt="logo" width="80" /></NavLink>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			      <span className="navbar-toggler-icon"></span>
 			    </button>

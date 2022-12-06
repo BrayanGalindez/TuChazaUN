@@ -1,7 +1,7 @@
 'use strict'
 
 const { models } = require('mongoose');
-var Article = require('../models/chaza');
+var Chaza = require('../models/chaza');
 
 //Creamos un objeto para disponer de todos los metodos de ruta que vamos a definir:
 
@@ -10,13 +10,13 @@ var controller = {
     saveChaza: (req, res) => {
         var params = req.body;
 
-        var article = new Article();
+        var chaza = new Chaza();
         //Asignamos los valores
-        article.title = params.title;
-        article.content = params.content;
+        chaza.title = params.title;
+        chaza.content = params.content;
         //Guardamos el archivo
-        article.save((err, articleStored) => {
-            if(err || !articleStored){
+        chaza.save((err, chazaStored) => {
+            if(err || !chazaStored){
                 return res.status(404).send({
                     status : 'Error',
                     message: 'No se ha añadido la chaza de forma correcta'
@@ -24,23 +24,23 @@ var controller = {
             }
             return res.status(200).send({
                 status: 'Success',
-                articleStored
+                chazaStored
             });
         });
     },
     //Metodo para listar los articulos:
 
     getChaza : (req, res) => {
-        var query = Article.find({});
+        var query = Chaza.find({});
 
-        query.sort('-date').exec((err, articles) =>{
+        query.sort('-date').exec((err, chazas) =>{
             if (err){
                 return res.status(500).send({
                     status: 'error',
                     message: 'Error al extraer los datos'
                 });
             }
-            if (!articles){
+            if (!chazas){
                 return res.status(404).send({
                     status: 'error',
                     message: 'No hay chazas para mostrar'
@@ -48,23 +48,23 @@ var controller = {
             }
             return res.status(200).send({
                 status: 'Success',
-                articles
+                chazas
             });
         });
     },
     //Metodo para eliminar un articulo
     deleteChaza: (req, res) => {
         //Recoger el id a traves de la url:
-        var articleId = req.params.id;
+        var chazaId = req.params.id;
 
-        Article.findOneAndDelete({_id: articleId}, (err, articleRemove) => {
+        Chaza.findOneAndDelete({_id: chazaId}, (err, chazaRemove) => {
             if(err){
                 return res.status(500).send({
                     status: 'error',
                     message: 'Error al dar de baja la chaza'
                 });
             }
-            if(!articleRemove){
+            if(!chazaRemove){
                 return res.status(404).send({
                     status: 'error',
                     message: 'No se ha encontrado la chaza a eliminar'
@@ -73,7 +73,7 @@ var controller = {
             }
             return res.status(200).send({
                 status: 'success',
-                article: articleRemove
+                chaza: chazaRemove
             });
         });
     }
