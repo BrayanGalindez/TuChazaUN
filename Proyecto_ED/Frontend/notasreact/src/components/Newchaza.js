@@ -36,7 +36,7 @@ const Newchaza = () => {
         });
     }
     if(redirect){
-        return <Navigate to="chazas" />;
+        return <Navigate to="/chazas" />;
     }
 
 

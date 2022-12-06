@@ -44,11 +44,11 @@ const Chazas = () => {
                             chazas.map((chaza, i) => {
 
                                 return (
-                                    <Chazas
+                                    <Chaza
                                         key={i}
                                         id={i}
                                         chazaData={chaza}
-                                        delChazas={deleteChazas}
+                                        delChaza={deleteChazas}
 
                                     />
                                 );
