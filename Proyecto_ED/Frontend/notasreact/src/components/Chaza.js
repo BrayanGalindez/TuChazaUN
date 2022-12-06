@@ -1,13 +1,8 @@
 import React from 'react';
 
-const Chaza = ({ id, ChazaData, delChaza }) => {
+const Chaza = ({ id, chazaData, delChaza }) => {
 
-    const { title, date, content, author } = ChazaData;
-
-    const formatDate = (date) => {
-        return date.substring(8, 10) + date.substring(4, 8) + date.substring(0, 4);
-    }
-
+    const { title,content } = chazaData;
     const del = () => {
         delChaza(id);
 
@@ -25,12 +20,6 @@ const Chaza = ({ id, ChazaData, delChaza }) => {
             <div className="card-body">
                 <label className="card-text text-start">{content}</label>
             </div>
-
-            <ul className="list-group list-group-flush">
-                <li className=" list-pub list-group-item" style={{ 'fontSize': 12 }}>Publicado el: {formatDate(date)}</li>
-                <li className=" list-pub list-group-item" style={{ 'fontSize': 12 }}>Autor: {author}</li>
-            </ul>
-
             <div className="card-footer">
                 <button type="button" className="btn btn-danger btn-sm" onClick={del}>
                     Eliminar

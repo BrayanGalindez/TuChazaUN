@@ -6,9 +6,6 @@ var Schema = mongoose.Schema;
 var ArticleSchema = new Schema({
 
     title: String,
-    date: {type: Date, default: Date.now},
-    content: String,
-    author: String
-
+    content: String
 })
 module.exports = mongoose.model('Chaza', ArticleSchema)

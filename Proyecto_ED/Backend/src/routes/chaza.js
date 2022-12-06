@@ -8,11 +8,11 @@ var router = express.Router();
 
 //Rutas para los articulos:
 
-router.post('/save',Article.save);
+router.post('/saveChaza',Article.save);
 
 router.get('/chazas',Article.getArticles);
 
-router.delete('/delete/:id',Article.delete);
+router.delete('/deleteChaza/:id',Article.delete);
 
 module.exports = router;
 

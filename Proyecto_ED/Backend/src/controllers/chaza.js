@@ -14,10 +14,8 @@ var controller = {
         //Asignamos los valores
         article.title = params.title;
         article.content = params.content;
-        article.author = params.author;
         //Guardamos el archivo
         article.save((err, articleStored) => {
-
             if(err || !articleStored){
                 return res.status(404).send({
                     status : 'Error',
@@ -46,7 +44,6 @@ var controller = {
                 return res.status(404).send({
                     status: 'error',
                     message: 'No hay chazas para mostrar'
-
                 });
             }
             return res.status(200).send({

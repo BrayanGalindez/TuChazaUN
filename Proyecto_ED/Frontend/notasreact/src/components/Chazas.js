@@ -5,29 +5,29 @@ import Chaza from './Chaza';
 
 const Chazas = () => {
 
-    const [Chazass, setChazass] = useState([]);
+    const [chazas, setChazas] = useState([]);
     const url = Global.url;
 
     useEffect(() => {
-        getChazass();
-        console.log(Chazass);
-    }, [Chazass.length]);
+        getChazas();
+        console.log(chazas);
+    }, [chazas.length]);
 
 
     //Obtenemos los artículos
 
-    const getChazass = () => {
-        axios.get(url + "Chazass").then(res => {
-            setChazass(res.data.Chazass);
+    const getChazas = () => {
+        axios.get(url + "chazas").then(res => {
+            setChazas(res.data.chazas);
         });
     }
 
     //Eliminamos un artículo por su id
 
     const deleteChazas = (id) => {
-        const idChazas = Chazass[id]._id;
-        axios.delete(url + "delete/" + idChazas).then(res => {
-            getChazass();
+        const idChazas = chazas[id]._id;
+        axios.delete(url + "deleteChaza/" + idChazas).then(res => {
+            getChazas();
         });
     }
 
@@ -39,9 +39,9 @@ const Chazas = () => {
             <div className="container">
                 <div className="row row-cols-1 row-cols-md-2 row-cols-lg-2">
                     {
-                        Chazass.length > 0 ? (
+                        chazas.length > 0 ? (
 
-                            Chazass.map((Chazas, i) => {
+                            chazas.map((Chazas, i) => {
 
                                 return (
                                     <Chazas
