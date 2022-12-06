@@ -6,13 +6,13 @@ var Article = require('../controllers/chaza');
 //Llamamos al objeto router de express
 var router = express.Router();
 
-//Rutas para los articulos:
+//Rutas para las chazas:
 
-router.post('/saveChaza',Article.save);
+router.post('/saveChaza',Article.saveChaza);
 
-router.get('/chazas',Article.getArticles);
+router.get('/chazas',Article.getChaza);
 
-router.delete('/deleteChaza/:id',Article.delete);
+router.delete('/deleteChaza/:id',Article.deleteChaza);
 
 module.exports = router;
 

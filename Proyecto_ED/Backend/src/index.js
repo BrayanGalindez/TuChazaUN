@@ -23,14 +23,6 @@ app.use(bodyParser.urlencoded({extended: false}));
 //Cualquier petición la convertimos a json:
 app.use(bodyParser.json());
 
-
-
-
-
-
-
-
-
 //Activamos el CORS para permitir las peticiones AJAX Y HTTP desde el frontend:
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin','*');
@@ -39,8 +31,8 @@ app.use((req, res, next) => {
     res.header('Alow', 'GET, POST, OPTIONS, PUT, DELETE');
     next();
 })
-app.use('/api', article_routes)
-app.use('/api', chaza_routes)
+app.use('/api', article_routes);
+app.use('/api', chaza_routes);
 
 mongoose.connect(url,{useNewUrlParser: true}).then(() =>{
     console.log('Conexion a la bdd realizada con exito!!!');

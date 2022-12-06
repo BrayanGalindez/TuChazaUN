@@ -7,7 +7,7 @@ var Article = require('../models/chaza');
 
 var controller = {
     //Metodo para guardar una chaza:
-    save: (req, res) => {
+    saveChaza: (req, res) => {
         var params = req.body;
 
         var article = new Article();
@@ -30,7 +30,7 @@ var controller = {
     },
     //Metodo para listar los articulos:
 
-    getArticles : (req, res) => {
+    getChaza : (req, res) => {
         var query = Article.find({});
 
         query.sort('-date').exec((err, articles) =>{
@@ -53,7 +53,7 @@ var controller = {
         });
     },
     //Metodo para eliminar un articulo
-    delete: (req, res) => {
+    deleteChaza: (req, res) => {
         //Recoger el id a traves de la url:
         var articleId = req.params.id;
 
