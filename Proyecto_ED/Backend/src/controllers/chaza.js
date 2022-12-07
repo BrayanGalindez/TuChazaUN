@@ -1,8 +1,6 @@
 'use strict'
-
 const { models } = require('mongoose');
 var Chaza = require('../models/chaza');
-
 //Creamos un objeto para disponer de todos los metodos de ruta que vamos a definir:
 
 var controller = {

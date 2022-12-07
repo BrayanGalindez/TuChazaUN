@@ -28,7 +28,7 @@ const Article = ({ id, articleData, delArticle }) => {
 
             <ul className="list-group list-group-flush">
                 <li className=" list-pub list-group-item" style={{ 'fontSize': 12 }}>Publicado el: {formatDate(date)}</li>
-                <li className=" list-pub list-group-item" style={{ 'fontSize': 12 }}>Autor: {author}</li>
+                <li className=" list-pub list-group-item" style={{ 'fontSize': 12 }}>Precio: {author}</li>
             </ul>
 
             <div className="card-footer">

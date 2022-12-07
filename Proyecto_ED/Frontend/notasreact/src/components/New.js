@@ -77,9 +77,20 @@ const New = () => {
                             <input type="text" className="form-control" id="author" name="author" ref={authorRef} onChange={changeState} required />
 
                         </div>
+                        <div class="input-group mb-3">
+                            <div class="custom-file">
+                                <input type="file" name="image" class="custom-file-input" id="inputGroupFile02"></input>
+                                    <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">
+                                        Subir Imagen
+                                    </label>
+                            </div>
+                        </div>
                         <div className='mb-3'>
                             <input className="form-control btn btn-primary" type="submit" id="publish" value="Publicar" />
                         </div>
+
+                        
+
                     </form>
 
                 </div>
